@@ -1,0 +1,67 @@
+%---常用包导入，依托毕业论文导言区---
+\usepackage{fullpage}
+\usepackage{xcolor} %文字颜色
+\usepackage{fontspec}
+
+\usepackage{setspace}
+% \doublespace % 设置行距 https://texblog.org/2011/09/30/quick-note-on-line-spacing/
+% \linespread{1.5}
+
+\usepackage{graphicx} % 图片
+\graphicspath{{figures/}}
+
+\usepackage{booktabs} % 表格
+\usepackage{multirow} %EXCEL导出latex表格，需要这个包
+\usepackage{caption}
+\usepackage{array} %为了居中
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{threeparttable} %表格尾注
+
+\usepackage{amssymb} %为了surd
+\usepackage{amsmath} % displaymath出问题就导这个包
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{remark}{Remark}
+
+\usepackage{hyperref}
+\hypersetup{
+     colorlinks   = true,
+	linkcolor    = blue,
+     citecolor    = blue
+}
+
+\usepackage[counterclockwise]{rotating}
+
+\usepackage{siunitx} % 按数字位数对齐
+
+\makeatletter
+\newcommand\specialsectioning{\setcounter{secnumdepth}{-2}}
+\makeatother
+
+\usepackage[super,square,sort]{natbib}
+\usepackage{lipsum}
+
+\newcommand{\cmt}[1]{} % 注释
+
+\setlength{\parindent}{0pt} % 全局首行不缩进
+
+% ---自建问题，证明，解答环境---
+\newenvironment{prob}[1]{\vskip .25cm {\bf Problem #1}}{\vskip .5cm}
+\newenvironment{prof}[1]{\vskip .25cm \textit {Proof:} #1}{\begin{flushright}{\qedsymbol}\end{flushright}}
+\newenvironment{solu}[1]{\vskip .25cm \textit {Solution:} #1}{}
+
+%Page setup
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\headheight 35pt
+\lhead{\large \today}
+\rhead{\includegraphics[width=5cm]{polyulogo.png}} % <-- school logo(please upload the file first, then change the name here)
+\lfoot{}
+\pagenumbering{arabic}
+\cfoot{\small{\thepage \space of \space \pageref{LastPage}}}
+\rfoot{}
+\headsep 2em
+\renewcommand{\baselinestretch}{1.25} 
